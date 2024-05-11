@@ -5,6 +5,11 @@ jobs:
   pytest:
     runs-on: ubuntu-latest
     steps: 
+      # 印出當前folder路徑, 及所有的files
+      - name: pre - checkout
+        run: | 
+          pwd 
+          ls -lh
       # step1: clone repo on current path and run the test
       # - name: clone repository
       #   run: |
@@ -13,6 +18,10 @@ jobs:
       # github action寫好的指令，可以直接使用
       - name: checkout code
         uses: actions/checkout@v4 
+      - name: after checkout
+        run: |
+          pwd
+          ls-lh
       - name: install pytest
         run: pip install pytest
       - name: run pytest
