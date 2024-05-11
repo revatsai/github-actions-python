@@ -21,7 +21,7 @@ jobs:
       - name: after checkout
         run: |
           pwd
-          ls-lh
+          ls -lh
       - name: install pytest
         run: pip install pytest
       - name: run pytest
