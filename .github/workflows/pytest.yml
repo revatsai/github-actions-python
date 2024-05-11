@@ -1,0 +1,16 @@
+name: pytest # 定義workflow
+on: workflow_dispatch # 如何觸發workflow，dispatch手動的
+  
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps: 
+      # step1: clone repo on current path and run the test
+      - name: clone repository
+        run: |
+          git clone https://github.com/revatsai/github-actions-python.git
+          cd github-actions-python
+      - name: install pytest
+        run: pip install pytest
+      - name: run pytest
+        run: pytest
