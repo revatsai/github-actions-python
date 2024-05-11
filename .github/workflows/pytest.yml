@@ -5,6 +5,8 @@ jobs:
   pytest:
     runs-on: ubuntu-latest
     steps: 
+      - name: print github action context
+        run: echo ${{ github.repositoryUrl }}
       # 印出當前folder路徑, 及所有的files
       - name: pre - checkout
         run: | 
