@@ -7,6 +7,9 @@ on:
     branches:
       - master
   workflow_dispatch:
+  # 第三個event
+  pull_request:
+    types: [opened] # 如果有人open了一個pull request, 就會觸發workflow
 
 
 jobs:
