@@ -1,6 +1,13 @@
 name: pytest # 定義workflow
-on: [push, workflow_dispatch] # 如何觸發workflow，dispatch手動的(event)
-# push會觸發action
+# on: [push, workflow_dispatch] # 如何觸發workflow, dispatch手動的(event), push會觸發action
+
+# 多個event, 指定某個filter或types
+on: 
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
 
 jobs:
   pytest:
